@@ -22,10 +22,10 @@ who wants to expose a set of services and the consumers of those
 services who want to do something with them.
 
 Many API providers describe their
-APIs via informal mechanisms - for example a markdown document that shows typical requests and the responses. An alternative is to 
-formally specify a “contract” for the interface, which  describes all  of the requests and responses in an interface, in a standard, machine-readable format. This isn't a new idea; it's been used in interface description languages in many frameworks, ever since the first two programs were hooked together. Formal specification of an interface has its advantages: using the description, tools can generate server stubs, client libraries, testing harnesses. 
+APIs via informal mechanisms - for example a markdown document that shows typical requests and the responses. An alternative is to
+formally specify a “contract” for the interface, which  describes all  of the requests and responses in an interface, in a standard, machine-readable format. This isn't a new idea; it's been used in interface description languages in many frameworks, ever since the first two programs were hooked together. Formal specification of an interface has its advantages: using the description, tools can generate server stubs, client libraries, testing harnesses.
 
-There have been multiple proposed standards for describing APIs, but the most popular is called 
+There have been multiple proposed standards for describing APIs, but the most popular is called
 [*OpenAPI Specification*](https://openapis.org/specification) . (The OpenAPI Specification was formerly known as
 Swagger).
 
@@ -62,13 +62,13 @@ Proxy defined in Apigee Edge.
 
 ## Part 1: A Brief Introduction to OpenAPI Spec
 
-For the purposes of illustration, we've created a specification describing an API that manages information about hotels. 
+For the purposes of illustration, we've created a specification describing an API that manages information about hotels.
 
 **Estimated Time: 6 minutes**
 
 1. Review the OpenAPI specification [document for the fictitious hotels service]
-(http://playground.apistudio.io/9dd084db-7136-460e-8fe8-bde4ecafdc93/#/)  
-http://playground.apistudio.io/9dd084db-7136-460e-8fe8-bde4ecafdc93/#/
+(http://playground.apistudio.io/6c02be7f-aac3-4d11-bd68-795ad19b23c4/#/)  
+http://playground.apistudio.io/6c02be7f-aac3-4d11-bd68-795ad19b23c4/#/
 ![](./media/image37.png)
 
 2. On the right side of the editor, in the documentation view, scroll
@@ -78,10 +78,10 @@ down *about 65% of the page* to **GET /hotels** request.   Click the
 
 3. Click on Send Request and observe the response  
 ![](./media/image39.png)
-This shows you the basics of the online apistudio tool, and how it helps you to explore a specification document. 
+This shows you the basics of the online apistudio tool, and how it helps you to explore a specification document.
 
 3. Examine the left-hand-side of the browser page.  
-This markup is called YAML - for Yet Another Markup Language. But it is possible to specify OpenAPI Spec documents using JSON as well. Explore the structure of the specification.  You don't have to learn it, but it is nice to understand what's possible. 
+This markup is called YAML - for Yet Another Markup Language. But it is possible to specify OpenAPI Spec documents using JSON as well. Explore the structure of the specification.  You don't have to learn it, but it is nice to understand what's possible.
 
 
 ## Part 2: About API proxies in Apigee Edge
@@ -104,30 +104,30 @@ for the actual API implementation, sometimes called a "backend". Instead of clie
 
 *Why Proxy?* The proxy obviously adds an extra layer, an extra network hop. Why do it? By adding this layer,
 
-* ...you gain a level of control and insight into the inbound API requests. The proxy can verify security tokens, collect analytics information, serve requests from cache, perform traffic management, ... all without changing the backend API. 
+* ...you gain a level of control and insight into the inbound API requests. The proxy can verify security tokens, collect analytics information, serve requests from cache, perform traffic management, ... all without changing the backend API.
 
 * ...you gain insight into the API usage.
 
-* ...you decouple the developer-facing API from the API exposed by 
+* ...you decouple the developer-facing API from the API exposed by
 backend services. This brings several advantages:
 
   * it shields "consumer developers" - those who are using the APIs - from changes in backend code or implementation.  As development teams make backend changes, consumer developers
 continue to call the same API without any interruption.
 
   * it enables you, the API Provider, to innovate at the edge without impacting internal applications and
-development teams. Edge acts as a *service virtualization* layer. For example For example, you could convert an XML-based API to a JSON-based API just by introducing a few rules in the proxy configuration, without changing any backend code. You could introduce new services that compose multiple backend services. 
+development teams. Edge acts as a *service virtualization* layer. For example For example, you could convert an XML-based API to a JSON-based API just by introducing a few rules in the proxy configuration, without changing any backend code. You could introduce new services that compose multiple backend services.
 
 In short, the API Proxy metaphor enables *API Management*.
 
-### Describing an API Proxy 
+### Describing an API Proxy
 
 In Apigee Edge, an API proxy is described by a set of configurations, usually specified in a bundle of XML configuration files.
 These configuration files will stipulate what inbound requests the proxy listens for (all of them?  just those on url path /v1/service ?), whether to use TLS (we hope so) and if so, which ciphers to use, whether to use caching, how to verify API keys, and so on.  All of these basic things
-can be done with simple configuration of Apigee Edge capabilities. No coding. 
+can be done with simple configuration of Apigee Edge capabilities. No coding.
 
-Apigee Edge also allows people to extend the capabilities with custom code. For example, if you would like to design an API Proxy that performs custom augmentation of the response received from the backend, you could do that by writing some JavaScript. 
+Apigee Edge also allows people to extend the capabilities with custom code. For example, if you would like to design an API Proxy that performs custom augmentation of the response received from the backend, you could do that by writing some JavaScript.
 
-The configuration 
+The configuration
 and any custom code you provide (such as
 JavaScript and Java), hosted in Apigee Edge, implements the facade for your backend HTTP
 services.
@@ -163,7 +163,7 @@ TargetEndpoint.
 ![](./media/image41.png)
 
 You can interactively build API proxies using the Apigee Edge management UI. You can store proxy configurations offline (and in a code repository), and then import them
-into Apigee Edge, using... *an API*. Apigee Edge itself exposes an API for management and administrative purposes. 
+into Apigee Edge, using... *an API*. Apigee Edge itself exposes an API for management and administrative purposes.
 
 For an overview of the Edge UI and API,
 see [Using the Apigee Edge development
@@ -197,9 +197,9 @@ requires you to provide to Apigee Edge:
 
 * the base network address for the backend service,
 * the HTTP verbs and resource paths you would like to expose to "consumer developers", and
-* a few other bits and bobs of information 
+* a few other bits and bobs of information
 
-Steps: 
+Steps:
 
 1. Open up a browser tab and log in to [*http://enterprise.apigee.com*](http://enterprise.apigee.com)
 
@@ -218,17 +218,17 @@ Steps:
 
 7. Paste in the URL for the OpenAPI Specification document:  
 http://playground.apistudio.io/9dd084db-7136-460e-8fe8-bde4ecafdc93/spec
- 
+
 8. Click on ***apply*** and then click ***next***  
 ![](./media/image46.png)
 
 9. Enter Proxy details  
-**Note**: In the following, replace **{your-initials}** with the initials of your name. 
+**Note**: In the following, replace **{your-initials}** with the initials of your name.
   * **Proxy Name**: **{your\_initials}\_hotels**
   * **Project Base Path**: **/v1/{your\_initials}\_hotels**
   * **Existing API**: **https://api.usergrid.com/nwalters/sandbox**
 
-10. Verify that it looks mostly like this, except with **YOUR** initials in place of dpc: 
+10. Verify that it looks mostly like this, except with **YOUR** initials in place of dpc:
 ![](./media/Build-a-Proxy.png)
 
 11. click next.
@@ -236,13 +236,13 @@ http://playground.apistudio.io/9dd084db-7136-460e-8fe8-bde4ecafdc93/spec
 12. Leave all of the **operations** selected from the OpenAPI spec to proxy. Click next.
 ![](./media/image47.png)
 
-13. Choose **Pass through (none)** for the authorization in order to choose not to apply any security policy for the proxy. We'll get to security in a later lab exercise. Click next. 
+13. Choose **Pass through (none)** for the authorization in order to choose not to apply any security policy for the proxy. We'll get to security in a later lab exercise. Click next.
 ![](./media/image48.png)
 
 14. Select only the **default** virtual host (http only) and Click next
 ![](./media/image49.png)
 
-15. Ensure that only the **test** environment is selected to deploy to and click **Build and Deploy**. 
+15. Ensure that only the **test** environment is selected to deploy to and click **Build and Deploy**.
 ![](./media/image06.png)
 
 16. Once it has built and deployed click the link to view your proxy in the proxy editor. You should see something like this:
@@ -250,7 +250,7 @@ http://playground.apistudio.io/9dd084db-7136-460e-8fe8-bde4ecafdc93/spec
 
 *Congratulations!* You have now built a pass-through API Proxy for an existing backend service.
 
-This shows you the interactive experience, building a proxy using the Apigee Edge Administrative UI. 
+This shows you the interactive experience, building a proxy using the Apigee Edge Administrative UI.
 
 
 ## Part 4: Test your proxy
@@ -264,10 +264,10 @@ rest of the labs.
 1. Launch **Postman**
 ![](./media/Launch-Postman.png)
 
-2. If you have not already done so, within Postman, import [the collection used in this workshop](../../Resources/Apigee-Edge-Workshop-20160726.postman_collection). To do so, you need to save that file from github to your local workstation, then import the saved file from your workstation or laptop. 
+2. If you have not already done so, within Postman, import [the collection used in this workshop](../../Resources/Apigee-Edge-Workshop-20160726.postman_collection). To do so, you need to save that file from github to your local workstation, then import the saved file from your workstation or laptop.
 ![](./media/Postman-Import.png)
 
-3. If you have not already done so, within Postman, import [the environment](../../Resources/Workshop-20160726.postman_environment). To do so, you need to save that file from github to your local workstation, then import the saved file from your workstation or laptop. 
+3. If you have not already done so, within Postman, import [the environment](../../Resources/Workshop-20160726.postman_environment). To do so, you need to save that file from github to your local workstation, then import the saved file from your workstation or laptop.
 ![](./media/Postman-environment-import.gif)
 
 2. Select the Workshop-20160726 environment.
@@ -312,9 +312,9 @@ Management UI is simple.
 1. Back in the Edge UI, Click on the **Deployment** drop-down on the API Proxy page.
 ![](./media/image50.png)
 
-2. Notice that the proxy we just created is shown with a green dot  next to the **test** environment. This indicates that the proxy is deployed to test. 
+2. Notice that the proxy we just created is shown with a green dot  next to the **test** environment. This indicates that the proxy is deployed to test.
 
-3. Click on the **test** environment name. Click "Undeploy" in the resulting confirmation box. This undeploys the proxy from the **test** environment. If you again select the Deploy dropdown, the green dot has become a grey dot. 
+3. Click on the **test** environment name. Click "Undeploy" in the resulting confirmation box. This undeploys the proxy from the **test** environment. If you again select the Deploy dropdown, the green dot has become a grey dot.
 
 4. Return to the Postman tool. Invoke the `GET /hotels` request again.  You should now see that the request fails, "Unable to identify proxy for host".  This indicates that Apigee Edge is not listening for that in-bound request.
 
@@ -322,16 +322,16 @@ Management UI is simple.
 and select the **test** environment. This again deploys the proxy to
 the **test** environment.
 
-6. Again, back to Postman. Invoke the `GET /hotels` request again. The request works. 
+6. Again, back to Postman. Invoke the `GET /hotels` request again. The request works.
 
 
 Things to consider:
 
 * What's an environment? An environment is a runtime execution context for the API proxies in an organization. You must deploy an API proxy to an environment before it can be accessed. You can deploy an API proxy to a single environment or to multiple environments.
 
-  An organization can contain multiple environments. For example, you might define a "dev", "test", and "prod" environment in an organization. For more on environments, see [the Apigee Edge documentation](http://docs.apigee.com/api-services/content/apigee-edge-organization-structure). 
+  An organization can contain multiple environments. For example, you might define a "dev", "test", and "prod" environment in an organization. For more on environments, see [the Apigee Edge documentation](http://docs.apigee.com/api-services/content/apigee-edge-organization-structure).
 
-* It is possible to customize the error message that Apigee Edge returns when responding to an unknown request.  You can do this with a proxy that listens on the basepath of / . 
+* It is possible to customize the error message that Apigee Edge returns when responding to an unknown request.  You can do this with a proxy that listens on the basepath of / .
 
 
 
@@ -349,7 +349,7 @@ Things to consider:
 
 3. click Start Trace Session button.
 
-3. In the request field, add `/hotels to the end of the URL, and send the request. 
+3. In the request field, add `/hotels to the end of the URL, and send the request.
 ![](./media/cap250-trace-send-request.png)
 
 
