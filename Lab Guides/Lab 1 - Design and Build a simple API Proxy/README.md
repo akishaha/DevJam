@@ -217,7 +217,7 @@ Steps:
 ![](./media/image44.png)
 
 7. Paste in the URL for the OpenAPI Specification document:  
-http://playground.apistudio.io/9dd084db-7136-460e-8fe8-bde4ecafdc93/spec
+http://playground.apistudio.io/6c02be7f-aac3-4d11-bd68-795ad19b23c4/spec
 
 8. Click on ***apply*** and then click ***next***  
 ![](./media/image46.png)
