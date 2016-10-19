@@ -1,0 +1,101 @@
+{
+	"variables": [],
+	"info": {
+		"name": "DevJam 2.0",
+		"_postman_id": "76e72d26-196e-59b4-8d8e-b6e45a80a3b5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/GET hotelspro",
+			"request": {
+				"url": "http://{{org}}-{{env}}.apigee.net/v1/hotelspro?zipcode=98101&radius=200",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {access_token}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "3aCTANZ1AUAXTfKKpumJFQwthzl4QGM2",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "vs3E2G2hZW1WQY5I",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/GET hotels",
+			"request": {
+				"url": "http://{{org}}-{{env}}.apigee.net/v1/hotels",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/POST OAuth Token - Client Cred",
+			"request": {
+				"url": "https://{{org}}-{{env}}.apigee.net/oauth-client-credentials/accesstoken",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "3aCTANZ1AUAXTfKKpumJFQwthzl4QGM2",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "vs3E2G2hZW1WQY5I",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
