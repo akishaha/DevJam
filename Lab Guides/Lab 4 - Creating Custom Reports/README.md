@@ -180,7 +180,7 @@ you can run a few requests through.
     on “Reports”. When on that page click on the '+ Custom Report'
     button on the top right.
 
-  > ![](./media/image13.png)
+  > ![](./media/create-custom-report.png)
 
 2.  Define the custom report - Enter the values as indicated below and
     click on the blue “Save” button.

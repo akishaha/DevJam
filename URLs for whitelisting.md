@@ -4,6 +4,8 @@ The following URLs/domains are used during the DevJam. If these are not accessib
 - http://apigee.com/
 - http://apigee.net
 - http://apistudio.io
+- http://apigee.com/edge
+- https://apibaas.apigee.com
 - http://github.com/
 - http://api.usergrid.com
 - http://maps.googleapis.com/

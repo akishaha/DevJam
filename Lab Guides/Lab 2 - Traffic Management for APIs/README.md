@@ -114,16 +114,16 @@ The various caching policies supported by Apigee Edge are:
 
 1. Go to the Apigee Edge Management UI browser tab.
 
-2. Ensure you're viewing the list of API Proxies.  If not, Use the upper navbar to select "API Proxies".  
-![](./media/cap500-select-API-Proxies.png)
+2. Ensure you're viewing the list of API Proxies.  If not, Use the side navigation bar Develope -> API Proxies to select "API Proxies".  
+![](./media/select-proxies.png)
 
 3. From the list of proxies, Click the name of *your* API proxy.
 
 4. Click on the develop tab.  
-![](./media/cap500-select-develop-tab.png)
+![](./media/click-develop.png)
 
 5. Click on Proxy Endpoints &gt; PreFlow.  
-![](./media/click-proxy-endpoints-preflow.png)
+![](./media/click-preflow.png)
 
   Each proxy has a number of different places at which developers can
   attach policies. You can specify that your policies will run during
@@ -137,7 +137,7 @@ The various caching policies supported by Apigee Edge are:
   respectively.
 
 6. Click on `+ Step` on the Request Flow.  
-![](./media/proxy-add-a-step.png)
+![](./media/click-plus-step.png)
 
   By doing this, you are adding a policy step that will run in the
   Request Pre-flow. It will run for all inbound requests. You will see a
@@ -149,10 +149,10 @@ The various caching policies supported by Apigee Edge are:
 
 7. Select the ‘Spike Arrest’ policy, and click "Add".  You have now
 added a policy, and you will be presented with this view:  
-![](./media/spike-arrest-added.png)
+![](./media/spike-policy-added.png)
 
 8. Modify the configuration of the policy, specifying "10pm" - 10 per minute - for the Rate.   
-![](./media/spike-arrest-10pm.png)
+![](./media/spike-arrest-modify.png)
 
   This shows you the basics related to configuring policies in Apigee
   Edge. There are numerous policy types, and for each one, you may
@@ -174,7 +174,7 @@ added a policy, and you will be presented with this view:
 
 9. Save the changes to the proxy and ensure that it is deployed
 successfully to the ‘test’ environment.
-![](./media/apiproxy-save.png)
+![](./media/spike-save.png)
 
   Think of Spike Arrest as a way to generally protect against traffic
   spikes (system wide) rather than as a way to limit traffic to a
@@ -211,13 +211,13 @@ successfully to the ‘test’ environment.
 10. Now, test the proxy.  Use Postman to quickly send more than 2 requests in 6 seconds and observe that certain requests will receive an error with the errorCode `policies.ratelimit.SpikeArrestViolation`.
 
 11. Let's use the Trace UI to examine what's happening. Return to the Edge UI, and select the Trace tab again. 
-![](./media/start-a-trace-session.png)
+![](./media/start-trace.png)
 
 12. Return to Postman, and send a few more requests. Now back to the Edge UI.  Examine the trace. You should see some requests returning 500 errors, indicating that the SpikeArrest has sent back the call. 
-![](./media/trace-failed-requests.png)
+![](./media/trace-calls.png)
 
 13. Stop the Trace session.
-![](./media/stop-the-trace-session.png)
+![](./media/stop-trace.png)
 
 
 ## Part 2: Adding a Response Cache
@@ -229,17 +229,17 @@ Now we'll introduce the ResponseCache policy.
 1. Go to the Apigee Edge Management UI browser tab.
 
 2. Select your API proxy. Select the Develop tab
-![](./media/select-develop-tab.png)
+![](./media/proxy-develop.png)
 
 3. Click on Proxy Endpoints -&gt; PreFlow
-![](./media/click-proxy-endpoints-preflow-again.png)
+![](./media/click-preflow-again.png)
 
 4. Click on “+ Step” on the Request Flow.
-![](./media/proxy-add-a-step-2.png)
+![](./media/click-plus-sign-again.png)
 
 5. From the resulting modal dialog, Select the ‘Response Cache’ policy, and click Add.
 You should see something like the following: 
-![](./media/after-add-ResponseCache.png.png)
+![](./media/add-response-cache.png)
 
   You have now added a second policy to the Request Pre-Flow. Remember,
   these are policies that will run for every inbound request handled by
@@ -286,13 +286,13 @@ You should see something like the following:
 
 
 10. Your Proxy Endpoints → Default → PreFlow should now look as follows:
-![](./media/hotels-proxy-preflow-two-policies.png)
+![](./media/proxy-req-preflow.png)
 
 11. Click the Target Endpoints → default → PostFlow
-![](./media/click-targetendpoints-default-postflow.png)
+![](./media/target-post-click.png)
 
 12. Verify that it looks as follows:
-![](./media/targetendpoints-default-postflow.png)
+![](./media/target-postflow.png)
 
 13. Save the changes to the API Proxy, and wait for it to successfully deploy.
 
@@ -315,11 +315,11 @@ You should see something like the following:
 
   The first transaction map will show you that the request was proxied
   to the backend. It should look as follows:
-  ![](./media/hotels-proxy-trace-first-uncached-request.png)
+  ![](./media/api-before-cache.png)
 
   The view for the second transaction will show you that the response
   was served from cache. It will look as follows:
-  ![](./media/hotels-proxy-trace-cached-request.png)
+  ![](./media/api-after-cache.png)
 
   After configuring the Response Cache policy, as expected, after the
   initial request, the second and all other requests for the next 3600
@@ -342,10 +342,11 @@ You should see something like the following:
   behavior, we don't need it to be so intrusive.
 
 * Use the EdgeUI to examine the cache resources available in the Environment.  
-  ![](./media/nav-to-environment-configuration.png)
+  ![](./media/admin-environments.png)
 
-  You should see something like this:
-  ![](./media/env-named-cache-resources.png)
+  You should see something like this, Select test environment:
+  
+  ![](./media/select-test-env.png)
   
   Create a named cache resource with your initials. Then, return to your
   Proxy, and modify the ResponseCache policy to explicitly use that named

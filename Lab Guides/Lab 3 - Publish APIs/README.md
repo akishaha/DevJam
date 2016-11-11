@@ -196,9 +196,12 @@ and generate keys:
 
 **Publishing an API Product**
 
-1)  From the Apigee Edge Management UI, go to Publish → Products
+1)  From the Apigee Edge Management UI, Using sidebar Navigation, go to Publish → API Products
+![](./media/sidebar-products.png)
 
-2)  Click on ‘+ Product’ button to add a new product
+
+2)  Click on ‘+ API Product’ button to add a new product
+![](./media/click-api-product.png)
 
 3)  In the ‘Product Details’ section of the new product screen, enter or select the following values for the various fields:
 
@@ -208,7 +211,7 @@ and generate keys:
 &nbsp;&nbsp;d.  Access: **Public**<br/>
 &nbsp;&nbsp;e.  Key Approval Type: **Automatic**
 
-![](./media/image59.png)
+![](./media/add-product.png)
 
 4)  In the ‘Resources’ section select the following values for the
     various fields:

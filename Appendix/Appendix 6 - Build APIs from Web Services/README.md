@@ -75,9 +75,9 @@ into a RESTful API using Apigee’s SOAP to REST API Wizard.
 
     -   From the Environment drop-down, select ‘test’
 
-    -   From the main menu, select APIs → API Proxies
+    -   From the Sidebar Navigation menu, select Develop → API Proxies
 
-> ![](./media/image28.png)
+> ![](./media/develop-proxies.png)
 
 -   To create a new API proxy, select the + API Proxy button to add a
     new proxy.
