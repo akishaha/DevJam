@@ -272,7 +272,7 @@ using the Apigee Edge Management UI.
         -   Email: {your email_id}        
         -   Username: {firstname_lastname}
 
-  > ![](./media/image22.png)
+  > ![](./media/create-developer.png)
 
     d.  Click ‘Save’ to save the Developer. The new developer should now
     be listed on the ‘Developer’ page.
