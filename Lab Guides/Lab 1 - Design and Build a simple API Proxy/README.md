@@ -56,19 +56,6 @@ A tool that generates an OpenAPI spec document from an existing API
 Proxy defined in Apigee Edge.
 
 
-## Part 1: A Brief Introduction to OpenAPI Spec
-
-For the purposes of illustration, we've created a specification describing an API that manages information about hotels.
-
-**Estimated Time: 6 minutes**
-
-
-1. Review the OpenAPI specification [document for the fictitious hotels service]
-(http://playground.apistudio.io/6c02be7f-aac3-4d11-bd68-795ad19b23c4/#/)  
-http://playground.apistudio.io/6c02be7f-aac3-4d11-bd68-795ad19b23c4/#/
-![](./media/image37.png)
-
-
 ## Part 1: "Design first" APIs with Apigee Edge
 
 **Estimated Time: 5 minutes (reading)**
@@ -112,7 +99,7 @@ This markup is called YAML - for Yet Another Markup Language. But it is possible
 
 
 
-## Part 3: About API proxies in Apigee Edge
+## Part 2: About API proxies in Apigee Edge
 
 **Estimated Time: 6 minutes (reading)**
 
@@ -212,7 +199,7 @@ shows you the steps involved in this latter approach. We've already
 got the OpenAPI specification document, so we won't be creating it.
 
 
-## Part 4: Building your first API Proxy in Apigee Edge
+## Part 3: Building your first API Proxy in Apigee Edge
 
 **Estimated Time: 7 minutes**
 
@@ -280,7 +267,7 @@ Steps:
 This shows you the interactive experience, building a proxy using the Apigee Edge Administrative UI.
 
 
-## Part 5: Test your proxy
+## Part 4: Test your proxy
 
 **Estimated Time: 6 minutes**
 
@@ -311,7 +298,7 @@ rest of the labs.
 6. For extra credit, you can try invoking the API proxy from other tools, like curl, or RESTclient, etc.
 
 
-## Part 6: Deployment
+## Part 5: Deployment
 
 **Estimated Time: 3 minutes**
 
@@ -362,7 +349,7 @@ Things to consider:
 
 
 
-## Part 7: Tracing
+## Part 6: Tracing
 
 **Estimated Time: 6 minutes**
 
