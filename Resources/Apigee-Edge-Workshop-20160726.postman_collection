@@ -1,101 +1,90 @@
 {
-	"variables": [],
-	"info": {
-		"name": "DevJam 2.0",
-		"_postman_id": "76e72d26-196e-59b4-8d8e-b6e45a80a3b5",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
-	},
-	"item": [
+	"id": "67897242-46e7-8f9e-2c93-0cf858ee8e42",
+	"name": "DevJam 2.0",
+	"order": [
+		"82310bab-9ff1-4c40-2a38-397cd78df61a",
+		"e7be87ea-e434-7f49-457f-729661424581",
+		"f5d7955b-930d-1b91-1017-266147950a96"
+	],
+	"folders": [],
+	"owner": 0,
+	"hasRequests": true,
+	"requests": [
 		{
+			"id": "82310bab-9ff1-4c40-2a38-397cd78df61a",
 			"name": "/GET hotelspro",
-			"request": {
-				"url": "http://{{org}}-{{env}}.apigee.net/v1/hotelspro?zipcode=98101&radius=200",
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {access_token}",
-						"description": ""
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/x-www-form-urlencoded",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "client_id",
-							"value": "3aCTANZ1AUAXTfKKpumJFQwthzl4QGM2",
-							"type": "text"
-						},
-						{
-							"key": "client_secret",
-							"value": "vs3E2G2hZW1WQY5I",
-							"type": "text"
-						},
-						{
-							"key": "grant_type",
-							"value": "client_credentials",
-							"type": "text"
-						}
-					]
+			"description": "",
+			"collectionId": "67897242-46e7-8f9e-2c93-0cf858ee8e42",
+			"method": "GET",
+			"headers": "Authorization: Bearer {access_token}\nContent-Type: application/x-www-form-urlencoded",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "client_id",
+					"value": "3aCTANZ1AUAXTfKKpumJFQwthzl4QGM2",
+					"type": "text"
 				},
-				"description": ""
-			},
-			"response": []
+				{
+					"key": "client_secret",
+					"value": "vs3E2G2hZW1WQY5I",
+					"type": "text"
+				},
+				{
+					"key": "grant_type",
+					"value": "client_credentials",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "http://{{org}}-{{env}}.apigee.net/v1/hotelspro?zipcode=98101&radius=200",
+			"responses": []
 		},
 		{
+			"id": "e7be87ea-e434-7f49-457f-729661424581",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://{{org}}-{{env}}.apigee.net/v1/{{initials}}_hotels/hotels",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1478848817685,
 			"name": "/GET hotels",
-			"request": {
-				"url": "http://{{org}}-{{env}}.apigee.net/v1/hotels",
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": []
-				},
-				"description": ""
-			},
-			"response": []
+			"description": "",
+			"collectionId": "67897242-46e7-8f9e-2c93-0cf858ee8e42",
+			"responses": []
 		},
 		{
+			"id": "f5d7955b-930d-1b91-1017-266147950a96",
 			"name": "/POST OAuth Token - Client Cred",
-			"request": {
-				"url": "https://{{org}}-{{env}}.apigee.net/oauth-client-credentials/accesstoken",
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "client_id",
-							"value": "3aCTANZ1AUAXTfKKpumJFQwthzl4QGM2",
-							"type": "text"
-						},
-						{
-							"key": "client_secret",
-							"value": "vs3E2G2hZW1WQY5I",
-							"type": "text"
-						},
-						{
-							"key": "grant_type",
-							"value": "client_credentials",
-							"type": "text"
-						}
-					]
+			"description": "",
+			"collectionId": "67897242-46e7-8f9e-2c93-0cf858ee8e42",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "client_id",
+					"value": "3aCTANZ1AUAXTfKKpumJFQwthzl4QGM2",
+					"type": "text"
 				},
-				"description": ""
-			},
-			"response": []
+				{
+					"key": "client_secret",
+					"value": "vs3E2G2hZW1WQY5I",
+					"type": "text"
+				},
+				{
+					"key": "grant_type",
+					"value": "client_credentials",
+					"type": "text"
+				}
+			],
+			"rawModeData": "",
+			"url": "https://{{org}}-{{env}}.apigee.net/oauth-client-credentials/accesstoken",
+			"responses": []
 		}
 	]
 }

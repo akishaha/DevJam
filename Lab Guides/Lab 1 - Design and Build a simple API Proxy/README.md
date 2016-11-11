@@ -83,8 +83,39 @@ This shows you the basics of the online apistudio tool, and how it helps you to 
 3. Examine the left-hand-side of the browser page.  
 This markup is called YAML - for Yet Another Markup Language. But it is possible to specify OpenAPI Spec documents using JSON as well. Explore the structure of the specification.  You don't have to learn it, but it is nice to understand what's possible.
 
+## Part 2: About API Specs in Apigee Edge
 
-## Part 2: About API proxies in Apigee Edge
+**Estimated Time: 5 minutes (reading)**
+
+Apigee Edge enables you model your APIs by creating OpenAPI Specifications. Manage your specifications and share them securely for collaboration with other users.  Apigee Edge comes with Spec Editor & 
+
+With New Edge, you can create your API proxies from the OpenAPI Specifications seamlessly that you design and save in the spec editor. In just a few clicks, you'll have an API proxy with the paths, parameters, conditional flows, and target endpoints generated automatically. Then, you can add features such as OAuth security, rate limiting, and caching.
+
+Let's create & import the spec in Apigee Edge using above hotels example.
+
+1. Go to: [beta.apigee.com/edge](https://beta.apigee.com/edge)
+2. Click Sign In and enter your login credentials.
+3. From the Organization drop-down in the top-right corner, select the organization assigned to you.
+![](./media/apigee-select-org.png)
+4. Select Develop > Specs in the side navigation menu.
+5. Click + Spec.
+6. Click Import URL from the drop-down menu.
+![](./media/tutorial-importspec.png)
+7. Enter the following information in the import dialog:
+
+	Filename: hotelstarget
+
+	URL: http://playground.apistudio.io/6c02be7f-aac3-4d11-bd68-795ad19b23c4/spec
+8. Click Import.
+
+	The OpenAPI Specification is imported.
+	![](./media/hotelstarget-spec-imported.png)
+9. Click the spec name to view it in the spec editor.	![](./media/hotelstarget-spec-editor.png)
+10. Click Close in the top navigation bar to close the spec and navigate back to the specification list.
+
+
+
+## Part 3: About API proxies in Apigee Edge
 
 **Estimated Time: 6 minutes (reading)**
 
@@ -184,7 +215,7 @@ shows you the steps involved in this latter approach. We've already
 got the OpenAPI specification document, so we won't be creating it.
 
 
-## Part 3: Building your first API Proxy in Apigee Edge
+## Part 4: Building your first API Proxy in Apigee Edge
 
 **Estimated Time: 7 minutes**
 
@@ -201,26 +232,22 @@ requires you to provide to Apigee Edge:
 
 Steps:
 
-1. Open up a browser tab and log in to [*http://enterprise.apigee.com*](http://enterprise.apigee.com)
+1. Open up a browser tab and log in to [*beta.apigee.com/edge*](https://beta.apigee.com/edge)
 
-2. From the Organization drop-down in the top-right corner, select the organization assigned to you.
+2. Select Develop > Specs in the side navigation menu.  
+![](./media/develop-proxies.png)
 
-3. From the Environment drop-down, select **test**
+3. To create a new API proxy, select the + API Proxy button to add a new proxy.  
+![](./media/create-proxy-click.png)
 
-4. From the main menu, select APIs → API Proxies  
-![](./media/image45.png)
+4. On the New API Proxy form that is displayed, provide information needed to generate an API proxy. Select **Reverse Proxy** and click on **Use OpenAPI**  
+![](./media/create-proxy-use-openapi.png)
 
-5. To create a new API proxy, select the + API Proxy button to add a new proxy.  
-![](./media/Plus-API-Proxy.png)
+5. Select the Specification **hotelstarget** created in Part 2, and then click on **select**:  
+![](./media/create-proxy-select-spec.png)
 
-6. On the New API Proxy form that is displayed, provide information needed to generate an API proxy. Select **Reverse Proxy** and click on **Use OpenAPI**  
-![](./media/image44.png)
-
-7. Paste in the URL for the OpenAPI Specification document:  
-http://playground.apistudio.io/6c02be7f-aac3-4d11-bd68-795ad19b23c4/spec
-
-8. Click on ***apply*** and then click ***next***  
-![](./media/image46.png)
+6. Click on ***next***  
+![](./media/create-proxy-next.png)
 
 9. Enter Proxy details  
 **Note**: In the following, replace **{your-initials}** with the initials of your name.
@@ -229,31 +256,34 @@ http://playground.apistudio.io/6c02be7f-aac3-4d11-bd68-795ad19b23c4/spec
   * **Existing API**: **https://api.usergrid.com/nwalters/sandbox**
 
 10. Verify that it looks mostly like this, except with **YOUR** initials in place of dpc:
-![](./media/Build-a-Proxy.png)
+![](./media/create-proxy-details.png)
 
 11. click next.
 
 12. Leave all of the **operations** selected from the OpenAPI spec to proxy. Click next.
-![](./media/image47.png)
+![](./media/create-proxy-flows.png)
 
 13. Choose **Pass through (none)** for the authorization in order to choose not to apply any security policy for the proxy. We'll get to security in a later lab exercise. Click next.
-![](./media/image48.png)
+![](./media/create-proxy-security.png)
 
 14. Select only the **default** virtual host (http only) and Click next
-![](./media/image49.png)
+![](./media/create-proxy-vhosts.png)
 
 15. Ensure that only the **test** environment is selected to deploy to and click **Build and Deploy**.
-![](./media/image06.png)
+![](./media/create-proxy-build.png)
 
-16. Once it has built and deployed click the link to view your proxy in the proxy editor. You should see something like this:
-![](./media/API-Proxy-Summary.png)
+16. Once it has built and deployed click the link to view your proxy in the proxy editor. 
+![](./media/create-proxy-final.png)
+
+17. You should see something like this:
+![](./media/develop-proxy.png)
 
 *Congratulations!* You have now built a pass-through API Proxy for an existing backend service.
 
 This shows you the interactive experience, building a proxy using the Apigee Edge Administrative UI.
 
 
-## Part 4: Test your proxy
+## Part 5: Test your proxy
 
 **Estimated Time: 6 minutes**
 
@@ -267,14 +297,14 @@ rest of the labs.
 2. If you have not already done so, within Postman, import [the collection used in this workshop](../../Resources/Apigee-Edge-Workshop-20160726.postman_collection). To do so, you need to save that file from github to your local workstation, then import the saved file from your workstation or laptop.
 ![](./media/Postman-Import.png)
 
-3. If you have not already done so, within Postman, import [the environment](../../Resources/Workshop-20160726.postman_environment). To do so, you need to save that file from github to your local workstation, then import the saved file from your workstation or laptop.
+3. If you have not already done so, within Postman, import [the environment](../../Resources/apigee-devjam.postman_environment). To do so, you need to save that file from github to your local workstation, then import the saved file from your workstation or laptop. Update the values of Initial, Org, Env to yours.
 ![](./media/Postman-environment-import.gif)
 
-2. Select the Workshop-20160726 environment.
-![](./media/Postman-select-environment.png)
+2. Select the Apigee DevJam environment.
+![](./media/postman-devjam-env.png)
 
-3. Select the **Apigee Edge Workshop 20160726**  project
-![](./media/Postman-select-project.png)
+3. Select the **DevJam2.0**  project
+![](./media/select-devjam-2.0.png)
 
 4. Select and send the **/GET hotels** request.
 ![](./media/Postman-send-request.png)
@@ -284,7 +314,7 @@ rest of the labs.
 6. For extra credit, you can try invoking the API proxy from other tools, like curl, or RESTclient, etc.
 
 
-## Part 5: Deployment
+## Part 6: Deployment
 
 **Estimated Time: 3 minutes**
 
@@ -335,28 +365,28 @@ Things to consider:
 
 
 
-## Part 6: Tracing
+## Part 7: Tracing
 
 **Estimated Time: 6 minutes**
 
 **Tracing the execution of a proxy** can also be done easily from the Management UI. This is a very powerful capability of Apigee Edge, since it makes it easy to troubleshoot and monitor API proxies. The Trace capability lets you probe the details of each step through an API proxy flow.
 
 1. From the **{your\_initials}**\_hotels API Proxy page, click on the **Trace** tab.  
-![](./media/cap250-select-trace-tab.png)
+![](./media/proxy-trace.png)
 
 2. In that tab, select the correct environment from the **Deployment to Trace** drop-down. In your case there should only be one environment to choose - **Environment test, Revision 1**.  
-![](./media/image05.png)
+![](./media/trace-screen.png)
 
 3. click Start Trace Session button.
 
 3. In the request field, add `/hotels to the end of the URL, and send the request.
-![](./media/cap250-trace-send-request.png)
+![](./media/start-trace.png)
 
 
 4. You will see the a transaction appear in the **Transactions** section and a visual representation of the executed proxy flow in the **Transaction Map** section.
 
 5. The **Transaction Map** is interactive - click on the various execution steps within the flow and review the information provided in the **Phase Details** section. You will notice that for each step information such as headers, variables, payload, properties and other relevant information is available. This helps you quickly understand exactly what is happening within the proxy flow.  
-![](./media/image28.png)
+![](./media/trace-output.png)
 
 6. Of course you can send requests from other clients. Try the same request from Postman.  Then flip back to the Trace window to see the transaction.
 
