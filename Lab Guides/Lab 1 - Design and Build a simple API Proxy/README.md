@@ -42,10 +42,6 @@ This is a partial list of the tools that Apigee has created,
 open-sourced, or contributed to related to API-first design, OpenAPI
 spec, or API deployment:
 
-- [*apistudio.io*](http://apistudio.io/)  
-In-browser OpenAPI IDE including live documentation, code
-generation, mocking, and cloud hosting.
-
 - [*A127*](https://github.com/apigee-127/a127-documentation/wiki)   
 A toolkit for modeling and building rich, enterprise-class APIs in
 Node.js on your laptop.
@@ -66,34 +62,24 @@ For the purposes of illustration, we've created a specification describing an AP
 
 **Estimated Time: 6 minutes**
 
+
 1. Review the OpenAPI specification [document for the fictitious hotels service]
 (http://playground.apistudio.io/6c02be7f-aac3-4d11-bd68-795ad19b23c4/#/)  
 http://playground.apistudio.io/6c02be7f-aac3-4d11-bd68-795ad19b23c4/#/
 ![](./media/image37.png)
 
-2. On the right side of the editor, in the documentation view, scroll
-down *about 65% of the page* to **GET /hotels** request.   Click the
-**Try this operation** button:  
-![](./media/image40.png)
 
-3. Click on Send Request and observe the response  
-![](./media/image39.png)
-This shows you the basics of the online apistudio tool, and how it helps you to explore a specification document.
-
-3. Examine the left-hand-side of the browser page.  
-This markup is called YAML - for Yet Another Markup Language. But it is possible to specify OpenAPI Spec documents using JSON as well. Explore the structure of the specification.  You don't have to learn it, but it is nice to understand what's possible.
-
-## Part 2: About API Specs in Apigee Edge
+## Part 1: "Design first" APIs with Apigee Edge
 
 **Estimated Time: 5 minutes (reading)**
 
-Apigee Edge enables you model your APIs by creating OpenAPI Specifications. Manage your specifications and share them securely for collaboration with other users.  Apigee Edge comes with Spec Editor & 
+Apigee Edge enables you model your APIs by creating OpenAPI Specifications. Manage your specifications and share them securely for collaboration with other users.  Apigee Edge comes with Spec Editor &
 
 With New Edge, you can create your API proxies from the OpenAPI Specifications seamlessly that you design and save in the spec editor. In just a few clicks, you'll have an API proxy with the paths, parameters, conditional flows, and target endpoints generated automatically. Then, you can add features such as OAuth security, rate limiting, and caching.
 
 Let's create & import the spec in Apigee Edge using above hotels example.
 
-1. Go to: [beta.apigee.com/edge](https://beta.apigee.com/edge)
+1. Go to: [https://apigee.com/edge](https://apigee.com/edge)
 2. Click Sign In and enter your login credentials.
 3. From the Organization drop-down in the top-right corner, select the organization assigned to you.
 ![](./media/apigee-select-org.png)
@@ -103,15 +89,26 @@ Let's create & import the spec in Apigee Edge using above hotels example.
 ![](./media/tutorial-importspec.png)
 7. Enter the following information in the import dialog:
 
-	Filename: hotelstarget
+	Filename: {your-initials}_hotels_spec
 
-	URL: http://playground.apistudio.io/6c02be7f-aac3-4d11-bd68-795ad19b23c4/spec
+	URL: https://raw.githubusercontent.com/apigee/DevJam/master/Resources/hotels-openapi.yaml
 8. Click Import.
 
 	The OpenAPI Specification is imported.
 	![](./media/hotelstarget-spec-imported.png)
 9. Click the spec name to view it in the spec editor.	![](./media/hotelstarget-spec-editor.png)
 10. Click Close in the top navigation bar to close the spec and navigate back to the specification list.
+11. On the right side of the editor, in the documentation view, scroll
+down *about 65% of the page* to **GET /hotels** request.   Click the
+**Try this operation** button:  
+![](./media/image40.png)
+
+12. Click on Send Request and observe the response  
+![](./media/image39.png)
+This shows you the basics of the OAS design tool, and how it helps you to explore a specification document.
+
+13. Examine the left-hand-side of the browser page.  
+This markup is called YAML - for Yet Another Markup Language. But it is possible to specify OpenAPI Spec documents using JSON as well. Explore the structure of the specification.  You don't have to learn it, but it is nice to understand what's possible.
 
 
 
@@ -272,7 +269,7 @@ Steps:
 15. Ensure that only the **test** environment is selected to deploy to and click **Build and Deploy**.
 ![](./media/create-proxy-build.png)
 
-16. Once it has built and deployed click the link to view your proxy in the proxy editor. 
+16. Once it has built and deployed click the link to view your proxy in the proxy editor.
 ![](./media/create-proxy-final.png)
 
 17. You should see something like this:
