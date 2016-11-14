@@ -358,7 +358,7 @@ Apps allow you to control who can access your APIs. You can revoke an app's key,
 
 > ![](./media/portal-api-doc-list.png)
 
-3) See API documentation,
+3) See API documentation.
 
 > ![](./media/portal-docs-listing.png)
 
