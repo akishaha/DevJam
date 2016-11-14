@@ -237,15 +237,139 @@ As an API provider, you need a way to expose your APIs, educate
 developers about your APIs, sign up developers, and let developers
 register apps. Exposing your APIs to developers is only part of creating a truly dynamic community. You also need a way for your developer community to provide feedback, make support and feature requests, and submit their own content that can be accessed by other developers.
 
-![](./media/image61.png)
+![](./media/portal-sample.png)
 
 **Developers**
 
 Developers access your APIs through apps. When the developer registers an app, they receive a single API key that allows them to access all of the API products associated with the app. However, developers must be registered before they can register an app.
 
+**Create a developer portal**
+
+1)  From the Apigee Edge Management UI, Using sidebar Navigation, go to Publish → Portals 
+
+> ![](./media/navigate-portals-link.png)
+
+2) 	Create new API Developer Portal.
+
+> ![](./media/create-portal.png)
+
+3) Launch your Developer Portal.
+
+> ![](./media/launch-portal.png)
+
+4) You should see your brand new Developer API Portal that looks like below,
+
+![](./media/portal-sample.png)
+
+**Publish API Product to developer portal**
+
+1) From the Apigee Edge Management UI, Using sidebar Navigation, go to Publish → Portals 
+
+2) Click on the portal created in above section.
+
+3) Select APIs from top select box,
+
+![](./media/portal-select-apis.png)
+
+4) Click on Get Started & Choose the API Product,
+
+![](./media/portal-add-apiproduct.png)
+
+5) Choose spec snapshot & add the API Product to the portal.
+
+![](./media/add-spec-snapshot.png)
+
+![](./media/review-add-apiproduct.png)
+
+
+
 **Register a developer from the developer portal**
 
-1)  Ask your instructor for the URL for the developer portal. On the developer portal home page select **Register**
+1)  Navigate to API developer portal as discussed in Step 3 above. On the developer portal home page select **SignUp**
+
+![](./media/portal-sample.png)
+
+2)  The registration page appears
+
+> ![](./media/portal-signup.png)
+
+3)  Enter the required information and select **Create**. Depending on the new account registration settings, when the new account is created, you could be sent an automated welcome email.
+
+
+**Register an app from the developer portal:**
+
+Developers register apps to access your API products. When a developer registers an app, the developer selects the API products to associate with the app and Edge generates an API key. Each app has a single API key that provides access to all API products associated with the app.
+
+Apps allow you to control who can access your APIs. You can revoke an app's key, preventing it from accessing all API products. Or you can revoke access to a single API product associated with the app.
+
+![](./media/image65.png)
+
+1)  Login to your API Developer Portal by clicking on Login link in Main Menu.
+
+![](./media/portal-login-link.png)
+
+2)  Enter your email & click on login. Login link will be delivered to your inbox.
+
+![](./media/login-email.png)
+
+3) Click on login link delivered to your inbox. You will be logged into the portal.
+
+
+4)  Select **My apps** below your username in the login menu
+
+> ![](./media/portal-myapps-link.png)
+
+5)  Click the **+ Add a** **new App** icon.
+
+> ![](./media/create-new-app.png)
+
+6) Enter details for the application and hit **Create App**
+
+> ![](./media/create-app-portal.png)
+
+7) Click on manage products to add API Product,
+
+> ![](./media/portal-manage-products.png)
+
+> NOTE: Select the product that you created in the previous step.
+
+> ![](./media/manage-products-save.png)
+
+7)  Access the Consumer Key (aka API Key) and Consumer Secret (aka
+    API Secret)
+
+> ![](./media/portal-created-app.png)
+
+8)  Test the API
+
+&nbsp;&nbsp;a.  Start the Trace session for the ‘**{your\_initials}\_hotels**’ proxy
+
+&nbsp;&nbsp;b.  Now that the API Key Verification policy has been added to the proxy, try and send a test ‘/GET hotels’ request from Postman with the following query parameters: **zipcode=98101&radius=200&apikey={apikey from the dev portal}**
+
+> Note: Replace the URL of hotels API with **{your\_initials}**\_hotel
+
+**View API Documentation**
+
+1) Click on APIs link in manin menu to access documentation.
+
+> ![](./media/portal-api-docs-link.png)
+
+2) You will see API Docs categories by API Product, Click on the category to see details.
+
+> ![](./media/portal-api-doc-list.png)
+
+3) See API documentation.
+
+> ![](./media/portal-docs-listing.png)
+
+
+**Extra Credit:**
+
+**Drupal based Apigee Devevloper Portal:** 
+
+**Register a developer from the developer portal**
+
+1)  Ask your instructor for the URL for the developer portal. On the developer portal home page select **Register**
 
 > ![](./media/image62.png)
 
@@ -253,7 +377,7 @@ Developers access your APIs through apps. When the developer registers an app, t
 
 > ![](./media/image63.png)
 
-3)  Enter the required information and select **Create new account**. Depending on the new account registration settings, when the new account is created, you could be sent an automated welcome email.
+3)  Enter the required information and select **Create new account**. Depending on the new account registration settings, when the new account is created, you could be sent an automated welcome email.
 
 **NOTE**: If you see this message:
 
@@ -270,7 +394,7 @@ Apps allow you to control who can access your APIs. You can revoke an app's key,
 
 ![](./media/image65.png)
 
-4)  Select **My apps** below your username in the login menu
+4)  Select **My apps** below your username in the login menu
 
 > ![](./media/image66.png)
 
@@ -302,26 +426,26 @@ Apps allow you to control who can access your APIs. You can revoke an app's key,
 1) Create a model
 
 When you create a model, it's stored in your Edge organization as the
-source for the API structure. For more information, see [*About SmartDoc
+source for the API structure. For more information, see [*About SmartDoc
 models and
 templates*](http://apigee.com/docs/developer-services/content/using-smartdocs-document-apis#models).
 
 &nbsp;&nbsp;a.  Ask you instructor to change your developer user to have administrator access in the portal. Logout and then back in to the developer portal.
 
-&nbsp;&nbsp;b.  Select **Content > SmartDocs** in the Drupal administration menu.
+&nbsp;&nbsp;b.  Select **Content > SmartDocs** in the Drupal administration menu.
 
 > ![](./media/image42.png)
 
-&nbsp;&nbsp;c.  Select **New model** at the top of the page
+&nbsp;&nbsp;c.  Select **New model** at the top of the page
 
 &nbsp;&nbsp;d.  Enter the following fields:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;- **Name**: The model name that will be displayed across the site.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;- **Internal name**: As you type the **Name**, the internal name displays. The internal name for the model that must be unique among all models.  The internal name must contain only lowercase letters, numbers, and hyphens with no spaces. Select **Edit** to edit this name.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;- **Internal name**: As you type the **Name**, the internal name displays. The internal name for the model that must be unique among all models.  The internal name must contain only lowercase letters, numbers, and hyphens with no spaces. Select **Edit** to edit this name.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;- **Description**: A description of the model.
 
 > ![](./media/image43.png)
 
-2)  Select **Create Model**.
+2)  Select **Create Model**.
 
 3)  Click on ‘Import’ to import an API specification
 
@@ -354,6 +478,8 @@ Back in the dev portal administrator, select the **hotels-openapi.yaml** file
 &nbsp;&nbsp;h.  Click on ‘**Send this request**’
 
 > ![](./media/image36.png)
+
+
 
 **Summary**
 
