@@ -237,30 +237,64 @@ As an API provider, you need a way to expose your APIs, educate
 developers about your APIs, sign up developers, and let developers
 register apps. Exposing your APIs to developers is only part of creating a truly dynamic community. You also need a way for your developer community to provide feedback, make support and feature requests, and submit their own content that can be accessed by other developers.
 
-![](./media/image61.png)
+![](./media/portal-sample.png)
 
 **Developers**
 
 Developers access your APIs through apps. When the developer registers an app, they receive a single API key that allows them to access all of the API products associated with the app. However, developers must be registered before they can register an app.
 
+**Create a developer portal**
+
+1)  From the Apigee Edge Management UI, Using sidebar Navigation, go to Publish → Portals 
+
+> ![](./media/navigate-portals-link.png)
+
+2) 	Create new API Developer Portal.
+
+> ![](./media/create-portal.png)
+
+3) Launch your Developer Portal.
+
+> ![](./media/launch-portal.png)
+
+4) You should see your brand new Developer API Portal that looks like below,
+
+![](./media/portal-sample.png)
+
+**Publish API Product to developer portal**
+
+1) From the Apigee Edge Management UI, Using sidebar Navigation, go to Publish → Portals 
+
+2) Click on the portal created in above section.
+
+3) Select APIs from top select box,
+
+![](./media/portal-select-apis.png)
+
+4) Click on Get Started & Choose the API Product,
+
+![](./media/portal-add-apiproduct.png)
+
+5) Choose spec snapshot & add the API Product to the portal.
+
+![](./media/add-spec-snapshot.png)
+
+![](./media/review-add-apiproduct.png)
+
+
+
 **Register a developer from the developer portal**
 
-1)  Ask your instructor for the URL for the developer portal. On the developer portal home page select **Register**
+1)  Navigate to API developer portal as discussed in Step 3 above. On the developer portal home page select **SignUp**
 
-> ![](./media/image62.png)
+![](./media/portal-sample.png)
 
 2)  The registration page appears
 
-> ![](./media/image63.png)
+> ![](./media/portal-signup.png)
 
-3)  Enter the required information and select **Create new account**. Depending on the new account registration settings, when the new account is created, you could be sent an automated welcome email.
+3)  Enter the required information and select **Create**. Depending on the new account registration settings, when the new account is created, you could be sent an automated welcome email.
 
-**NOTE**: If you see this message:
-
-> ![](./media/image64.png)
-
-Then the developer portal administrator MUST approve the developer
-before the developer can sign in. If you see this message ask your instructor to approve your developer account - once that is done then login to the portal.
 
 **Register an app from the developer portal:**
 
@@ -270,24 +304,41 @@ Apps allow you to control who can access your APIs. You can revoke an app's key,
 
 ![](./media/image65.png)
 
+1)  Login to your API Developer Portal by clicking on Login link in Main Menu.
+
+![](./media/portal-login-link.png)
+
+2)  Enter your email & click on login. Login link will be delivered to your inbox.
+
+![](./media/login-email.png)
+
+3) Click on login link delivered to your inbox. You will be logged into the portal.
+
+
 4)  Select **My apps** below your username in the login menu
 
-> ![](./media/image66.png)
+> ![](./media/portal-myapps-link.png)
 
 5)  Click the **+ Add a** **new App** icon.
 
-> ![](./media/image39.png)
+> ![](./media/create-new-app.png)
 
-6)  Enter details for the application and hit **Create App**
+6) Enter details for the application and hit **Create App**
 
-> ![](./media/image40.png)
+> ![](./media/create-app-portal.png)
+
+7) Click on manage products to add API Product,
+
+> ![](./media/portal-manage-products.png)
 
 > NOTE: Select the product that you created in the previous step.
 
-7)  Open your new app to view the Consumer Key (aka API Key) and Consumer Secret (aka
+> ![](./media/manage-products-save.png)
+
+7)  Access the Consumer Key (aka API Key) and Consumer Secret (aka
     API Secret)
 
-> ![](./media/image41.png)
+> ![](./media/portal-created-app.png)
 
 8)  Test the API
 
@@ -297,63 +348,19 @@ Apps allow you to control who can access your APIs. You can revoke an app's key,
 
 > Note: Replace the URL of hotels API with **{your\_initials}**\_hotel
 
-**Generate API Documentation**
+**View API Documentation**
 
-1) Create a model
+1) Click on APIs link in manin menu to access documentation.
 
-When you create a model, it's stored in your Edge organization as the
-source for the API structure. For more information, see [*About SmartDoc
-models and
-templates*](http://apigee.com/docs/developer-services/content/using-smartdocs-document-apis#models).
+> ![](./media/portal-api-docs-link.png)
 
-&nbsp;&nbsp;a.  Ask you instructor to change your developer user to have administrator access in the portal. Logout and then back in to the developer portal.
+2) You will see API Docs categories by API Product, Click on the category to see details.
 
-&nbsp;&nbsp;b.  Select **Content > SmartDocs** in the Drupal administration menu.
+> ![](./media/portal-api-doc-list.png)
 
-> ![](./media/image42.png)
+3) See API documentation,
 
-&nbsp;&nbsp;c.  Select **New model** at the top of the page
-
-&nbsp;&nbsp;d.  Enter the following fields:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;- **Name**: The model name that will be displayed across the site.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;- **Internal name**: As you type the **Name**, the internal name displays. The internal name for the model that must be unique among all models.  The internal name must contain only lowercase letters, numbers, and hyphens with no spaces. Select **Edit** to edit this name.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;- **Description**: A description of the model.
-
-> ![](./media/image43.png)
-
-2)  Select **Create Model**.
-
-3)  Click on ‘Import’ to import an API specification
-
-![](./media/image44.png)
-
-&nbsp;&nbsp;a.  The API specification can be of Swagger 1.2, Swagger 2.0 (JSON or YAML) or WADL formats. In this example, we will use Swagger 2.0 – YAML.<br/>
-Open the **hotels-openapi.yaml** file from the lab material in a text editor and change the {baas_org} on line 14 to match your baas org and save the file.<br/>
-Back in the dev portal administrator, select the **hotels-openapi.yaml** file
-
-> ![](./media/image45.png)
-
-&nbsp;&nbsp;b.  Click on ‘**Import’**
-
-&nbsp;&nbsp;c.  Select all the Operations//Methods that should be published (we will select all)
-
-> ![](./media/image33.png)
-
-&nbsp;&nbsp;d.  Click on ‘**Update**’
-
-&nbsp;&nbsp;e.  Click on ‘View API Documentation’ to see the published documentation
-
-> ![](./media/image34.png)
-
-&nbsp;&nbsp;f.  Click on ‘**hotels-get**’
-
-> ![](./media/image35.png)
-
-&nbsp;&nbsp;g.  Enter ‘**application/json**’ as the Content-Type. Leave the radius and zipcode empty
-
-&nbsp;&nbsp;h.  Click on ‘**Send this request**’
-
-> ![](./media/image36.png)
+> ![](./media/portal-docs-listing.png)
 
 **Summary**
 
