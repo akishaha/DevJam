@@ -78,17 +78,17 @@ Let's create & import the spec in Apigee Edge using above hotels example.
 
 	Filename: {your-initials}_hotels_spec
 
-	URL: https://raw.githubusercontent.com/apigee/DevJam/master/Resources/hotels-openapi.yaml
+	URL: [https://raw.githubusercontent.com/apigee/DevJam/master/Resources/hotels-openapi.json](https://raw.githubusercontent.com/apigee/DevJam/master/Resources/hotels-openapi.json)
 8. Click Import.
 
 	The OpenAPI Specification is imported.
 	![](./media/hotelstarget-spec-imported.png)
-9. Click the spec name to view it in the spec editor.	![](./media/hotelstarget-spec-editor.png)
+9. Click the spec name to view it in the spec editor.	![](./media/spec-editor-json.png)
 
 10. On the right side of the editor, you can see documentation view.
 
 11. Examine the left-hand-side of the browser page.  
-This markup is called YAML - for Yet Another Markup Language. But it is possible to specify OpenAPI Spec documents using JSON as well. Explore the structure of the specification.  You don't have to learn it, but it is nice to understand what's possible.
+This markup is called JSON. But it is possible to specify OpenAPI Spec documents using YAML - for Yet Another Markup Language as well. Explore the structure of the specification.  You don't have to learn it, but it is nice to understand what's possible.
 
 12. Click Close in the top navigation bar to close the spec and navigate back to the specification list.
 This shows you the basics of the OAS design tool, and how it helps you to explore a specification document.
