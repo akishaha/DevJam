@@ -213,7 +213,7 @@ requires you to provide to Apigee Edge:
 
 Steps:
 
-1. Open up a browser tab and log in to [*beta.apigee.com/edge*](https://beta.apigee.com/edge)
+1. Open up a browser tab and log in to [*apigee.com/edge*](https://beta.apigee.com/edge)
 
 2. Select Develop > Specs in the side navigation menu.  
 ![](./media/develop-proxies.png)
